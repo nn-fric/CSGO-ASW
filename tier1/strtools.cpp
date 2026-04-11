@@ -1,26 +1,13 @@
 #include <tier1/strtools.h>
 
-
 void V_FixSlashes( char *pname, char separator )
 {
-	if( separator == CORRECT_PATH_SEPARATOR )
-	{
-		while( pname != nullptr )
-		{
-			if( *pname == INCORRECT_PATH_SEPARATOR )
-				*pname = separator;
+	const int len = strlen( pname );
+	const char newSeparator = separator == INCORRECT_PATH_SEPARATOR ? CORRECT_PATH_SEPARATOR : INCORRECT_PATH_SEPARATOR;
 
-			pname++;
-		}
-	}
-	else if( separator == INCORRECT_PATH_SEPARATOR )
+	for( int i = 0; i < len; i++ )
 	{
-		while( pname != nullptr )
-		{
-			if( *pname == CORRECT_PATH_SEPARATOR )
-				*pname = separator;
-
-			pname++;
-		}
+		if( pname[i] == separator )
+			pname[i] = newSeparator;
 	}
 }

@@ -13,6 +13,7 @@ add_executable( csgo
 
 		# tier0
 		tier0/commandline.cpp
+		tier0/logging.cpp
 
 		# tier1
 		tier1/strtools.cpp

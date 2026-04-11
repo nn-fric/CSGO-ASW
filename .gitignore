@@ -1,0 +1,9 @@
+# CLion
+/.idea/
+/cmake-build-*/
+
+# VS
+/.vs/
+/out/
+
+/build/
